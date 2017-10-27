@@ -1,0 +1,5 @@
+interface Collection{
+  
+  Iterator iterator();
+
+}
