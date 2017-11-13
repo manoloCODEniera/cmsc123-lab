@@ -41,12 +41,12 @@ public class LinkedList<E> implements Collection{
     
   }
   
-  public void remove(int index){
+  public E remove(int index){
   
     // empty list
     
     if(size == 0)
-      return;
+      return null;
     
     // default case
     
@@ -59,10 +59,26 @@ public class LinkedList<E> implements Collection{
         break;
       } 
     }
+     E item = current.data;
      previous.next = current.next;
      current.next = null;
      this.size--;
-     return;
+     return item;
+  }
+  
+  public E getData(int index) {
+    Node current = this.head;
+    
+    
+    
+    for(int i = 0; i < index; i++) {
+      current = current.next;
+      if(current == null) {
+        break;
+      } 
+    }
+    E item = current.data;
+    return item;
   }
     
   
@@ -78,9 +94,9 @@ public class LinkedList<E> implements Collection{
   
   
 
-}
 
-class Node<E> {
+
+class Node {
   E data;
   Node next;
   
@@ -93,4 +109,4 @@ class Node<E> {
      return this.data.toString();
   }
   
-}
+}}
