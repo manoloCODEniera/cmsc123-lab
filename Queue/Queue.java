@@ -34,16 +34,7 @@ class Queue {
       return -1;
     }
     item = array[front];
-    
-    
-    if(front == rear){
-      front = rear =-1;
-    }
-    if(front==size-1)
-      front = 0;
-    
     front = (front + 1) % this.max;
-    size--;
     return item;
   }
   
