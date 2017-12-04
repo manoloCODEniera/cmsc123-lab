@@ -1,5 +1,3 @@
-
-
 public class minHeap {
  public int size;
  public int [] array;
@@ -121,6 +119,7 @@ public class minHeap {
     if(index > size) {
       return;
     }
+    if(array[index]!=0)
     System.out.print(array[index] + " ");
     preorder(index*2);
     preorder(index*2+1);
@@ -132,6 +131,7 @@ public class minHeap {
       return;
     }
     inorder(index*2);
+    if(array[index]!=0)
     System.out.print(array[index] + " ");
     inorder(index*2+1);
   }
@@ -143,6 +143,7 @@ public class minHeap {
     }
     postorder(index*2);
     postorder(index*2+1);
+    if(array[index]!=0)
     System.out.print(array[index] + " ");
   }
  
